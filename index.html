@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>Wikitube</title>
 </head>
-<body>
-    
+
+<body onload="onInit()">
+    <header class="main-navs">
+        <nav class="nav flex">
+            <a href="#main-welcome" class="logo">Wikitube</a>
+            <ul class="clean-list flex">
+                <li><a href="#main-video">Listen Now</a></li>
+                <li><a href="#main-videos">All Songs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="main-welcome" class="main-welcome">
+        <div class="welcome">
+            <h1>This Month's</h1>
+            <h3>Record Breaking Albums !</h3>
+            <div class="welcome-links">
+                <a href="#main-video"><button>Listen Now</button></a>
+                <a href="#main-video"><button>All Songs</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="main-video" class="main-video">
+        <div class="video">
+            <iframe class="video-frame" width="420" height="345" src="https://www.youtube.com/embed/RS7trxkb0zE">
+            </iframe>
+            <div class="video-info"></div>
+        </div>
+    </section>
+
+    <section id="main-videos" class="main-videos">
+        <div class="videos-search">
+            <input class="search" type="search" onkeydown="searchVideos(event, this)">
+            <button class="btn-search" onclick="search()">Search</button>
+        </div>
+        <div class="videos">
+
+        </div>
+    </section>
+
+    <script src="lib/axios.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/video.service.js"></script>
+    <script src="js/video.controller.js"></script>
 </body>
+
 </html>
